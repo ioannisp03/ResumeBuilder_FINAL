@@ -6,7 +6,52 @@
         xmlns:local="clr-namespace:ResumeBuilder_FINAL"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+    <Window.Resources>
+        
+    </Window.Resources>
+    <!--
+        Data we want to show:
+            Data that concern the user (all required):
+                - Name
+                - Age
+                - Phone Number
+                - Email Address
+            Other data that we can have multiple of (none are required):
+                - Education: Diploma(s)
+                - Professional Experience: Work Field Experience(s)
+                - Executive Summary: Social Involvment(s) ()
+                - References
+    -->
+    
+    <DockPanel Margin="10">
+        <Label Content="Resume Builder" 
+               FontWeight="Bold" FontSize="25"
+               HorizontalAlignment="Center"
+               DockPanel.Dock="Top"/>
+        <Label DockPanel.Dock="Top" HorizontalAlignment="Center" FontSize="20"
+            Content="Made by Charles Séguin, Adem Bessam and Ioannis Panaritis"/>
+        <Button Content="Add User" Name="btnAddUser" Click="btnAddUser_Click"
+        DockPanel.Dock="Bottom" 
+        Width="75" Height="20"
+        HorizontalAlignment="Center" Margin="20"/>
+        <!-- 
+            Clicking on the button will bring the user to a window where
+            they will be prompted to enter their contact information
+        -->
+        <StackPanel Margin="10">
+            <Label Content="Saved Users"
+                   FontWeight="Bold" FontSize="18"
+                   HorizontalAlignment="Center"/>
+            <DataGrid Name="ResumeUsers" 
+                      SelectionChanged="ResumeUsers_SelectionChanged"/>
+                      <!-- 
+                           Clicking on a user will bring us to a window with his or her 
+                           info with the option to update and delete 
+                            
+                           AND then also the option to create, view, modify and delete a resume with their contact 
+                           information passed to it. (Will need button to open create resume window)
+                      -->
+        </StackPanel>
+        
+    </DockPanel>
 </Window>

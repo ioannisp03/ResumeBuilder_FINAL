@@ -24,5 +24,15 @@ namespace ResumeBuilder_FINAL
         {
             InitializeComponent();
         }
+
+        private void ResumeUsers_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void btnAddUser_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
