@@ -19,19 +19,32 @@ namespace ResumeBuilder_FINAL
     /// </summary>
     public partial class ContactInfoWindow : Window
     {
-        public ContactInfoWindow()
+        Contact contact;
+        public ContactInfoWindow(Contact contact)
         {
             InitializeComponent();
+            this.contact = contact;
+
+            fNameTextBlock.Text = contact.FirstName;
+            lNameTextBlock.Text = contact.LastName;
+            ageTextBlock.Text = contact.Age.ToString();
+            phoneNumberTextBlock.Text = contact.PhoneNumber;
+            emailTextBlock.Text = contact.Email;
+            positionTextBlock.Text = contact.Position;
         }
 
         private void btnEditContact_Click(object sender, RoutedEventArgs e)
         {
-
+            UpdateContact updateWindow = new UpdateContact(contact);
+            updateWindow.ShowDialog();
+            Close();
         }
 
         private void btnDeleteContact_Click(object sender, RoutedEventArgs e)
         {
-
+            ContactDBHandler db = ContactDBHandler.Instance;
+            db.DeleteContact(contact);
+            Close();
         }
     }
 }

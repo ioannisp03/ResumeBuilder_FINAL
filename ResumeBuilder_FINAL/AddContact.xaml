@@ -32,6 +32,10 @@
             <Label Width="125" FontWeight="Bold">Position Title:</Label>
             <TextBox x:Name="positionTextBox"/>
         </StackPanel>
-
+        <Button x:Name="SubmitButton"
+                Click="SubmitButton_Click"
+                Content="Submit"
+                HorizontalAlignment="Center"
+                Margin="0,20" Width="75"/>
     </StackPanel>
 </Window>
