@@ -26,7 +26,17 @@ namespace ResumeBuilder_FINAL
 
         private void submitButton_Click(object sender, RoutedEventArgs e)
         {
+            Education newEducation = new Education();
+            newEducation.AcademicDegree = academicDegree.Text;
+            newEducation.Major_FieldOfStudy = majorFieldOfStudy.Text;
+            newEducation.InstitutionName = institutionName.Text;
+            newEducation.YearOfCompletion = Convert.ToInt32(completionYear.Text);
+            newEducation.Details = details.Text;
 
+
+            EducationDBHandler educationDBHandler = EducationDBHandler.Instance;
+            educationDBHandler.AddEducation(newEducation);
+            Close();
         }
     }
 }

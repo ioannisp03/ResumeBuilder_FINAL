@@ -14,19 +14,34 @@ using System.Windows.Shapes;
 
 namespace ResumeBuilder_FINAL
 {
-    /// <summary>
-    /// Interaction logic for UpdateEducationWindow.xaml
-    /// </summary>
+   
     public partial class UpdateEducationWindow : Window
     {
-        public UpdateEducationWindow()
+        Education education;
+        public UpdateEducationWindow(Education education)
         {
             InitializeComponent();
+            this.education = education;
+
+            //display information in textbox
+            academicDegreeTextBox.Text = education.AcademicDegree;
+            majorFieldOfStudyTextBox.Text = education.Major_FieldOfStudy;
+            institutionNameTextBox.Text = education.InstitutionName;
+            completionYearTextBox.Text = education.YearOfCompletion.ToString();
+            detailsTextBox.Text = education.Details;
         }
 
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
+            education.AcademicDegree = academicDegreeTextBox.Text;
+            education.Major_FieldOfStudy = majorFieldOfStudyTextBox.Text;
+            education.InstitutionName = institutionNameTextBox.Text;
+            education.YearOfCompletion = Convert.ToInt32(completionYearTextBox.Text);
 
+            EducationDBHandler educationDBHandler = EducationDBHandler.Instance;
+            educationDBHandler.UpdateEducation(education);
+            Close();
+            Close();
         }
     }
 }

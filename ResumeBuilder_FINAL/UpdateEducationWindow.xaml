@@ -11,23 +11,23 @@
             <Label Content="Edit your Educational Experiences" FontWeight="Bold"/>
             <StackPanel Orientation="Horizontal">
                 <Label Content="Enter your academic degree:"/>
-                <TextBox x:Name="academicDegree"  />
+                <TextBox x:Name="academicDegreeTextBox"  />
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Label Content="Enter your major/field of study:"/>
-                <TextBox x:Name="majorFieldOfStudy"/>
+                <TextBox x:Name="majorFieldOfStudyTextBox"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Label Content="Enter the name of the institution:"/>
-                <TextBox x:Name="institutionName"/>
+                <TextBox x:Name="institutionNameTextBox"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Label Content="Enter the year of completion:"/>
-                <TextBox x:Name="completionYear"/>
+                <TextBox x:Name="completionYearTextBox"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Label Content="Details"/>
-                <TextBox x:Name="details"/>
+                <TextBox x:Name="detailsTextBox"/>
             </StackPanel>
             <Button x:Name="saveButton"
                     Click="saveButton_Click"
