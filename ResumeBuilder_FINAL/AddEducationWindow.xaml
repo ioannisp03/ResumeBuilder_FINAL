@@ -22,7 +22,7 @@
                 <TextBox x:Name="institutionName"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label Content="Enter the year or completion:"/>
+                <Label Content="Enter the year of completion:"/>
                 <TextBox x:Name="completionYear"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
