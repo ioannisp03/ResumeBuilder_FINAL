@@ -15,23 +15,13 @@ using System.Windows.Shapes;
 namespace ResumeBuilder_FINAL
 {
     /// <summary>
-    /// Interaction logic for ContactInfoWindow.xaml
+    /// Interaction logic for UpdateContact.xaml
     /// </summary>
-    public partial class ContactInfoWindow : Window
+    public partial class UpdateContact : Window
     {
-        public ContactInfoWindow()
+        public UpdateContact()
         {
             InitializeComponent();
-        }
-
-        private void btnEditContact_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnDeleteContact_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

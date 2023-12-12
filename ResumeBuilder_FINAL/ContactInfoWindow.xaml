@@ -5,8 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ResumeBuilder_FINAL"
         mc:Ignorable="d"
-        Title="ContactInfoWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="ContactInfoWindow" Height="450" Width="400">
+    <StackPanel Margin="10">
+        <Label Content="Contact Information Details" HorizontalAlignment="Center" FontSize="25" FontWeight="Bold" Grid.ColumnSpan="2" Margin="0,0,0,20"/>
+        <StackPanel Orientation="Horizontal" Margin="0,5">
+            <Label Width="125" FontWeight="Bold">First Name: </Label>
+            <TextBlock x:Name="fNameTextBlock"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,5">
+            <Label Width="125" FontWeight="Bold">Last Name: </Label>
+            <TextBlock x:Name="lNameTextBlock"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,5">
+            <Label Width="125" FontWeight="Bold">Age: </Label>
+            <TextBlock x:Name="ageTextBlock"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,5">
+            <Label Width="125" FontWeight="Bold">Phone Number: </Label>
+            <TextBlock x:Name="phoneNumberTextBlock"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,5">
+            <Label Width="125" FontWeight="Bold">Email Address: </Label>
+            <TextBlock x:Name="emailTextBlock"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,5">
+            <Label Width="125" FontWeight="Bold">Position Title: </Label>
+            <TextBlock x:Name="positionTextBlock"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20">
+            <Button x:Name="btnEditContact" Click="btnEditContact_Click" Content="Update"
+                    Width="75" Margin="20"/>
+            <Button x:Name="btnDeleteContact" Click="btnDeleteContact_Click" Content="Delete"
+                    Width="75" Margin="20"/>
+        </StackPanel>
+
+    </StackPanel>
 </Window>
