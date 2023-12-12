@@ -72,9 +72,17 @@ namespace ResumeBuilder_FINAL
 
         private void btnAddContact_Click(object sender, RoutedEventArgs e)
         {
-            AddContact addContact = new AddContact();
-            addContact.ShowDialog();
-            RefreshAllResources();
+            if (ResumeContact.Items == null)
+            {
+                AddContact addContact = new AddContact();
+                addContact.ShowDialog();
+                RefreshAllResources();
+            }
+            else
+            {
+                MessageBox.Show("Cannot create multiple contact informations.",
+                    "Contact Information Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void btnAddExperience_Click(object sender, RoutedEventArgs e)
