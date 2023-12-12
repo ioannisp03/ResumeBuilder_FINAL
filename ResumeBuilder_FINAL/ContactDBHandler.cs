@@ -101,6 +101,10 @@ namespace ResumeBuilder_FINAL
                         {
                             contact.Age = age;
                         }
+
+                        contact.PhoneNumber = reader["PhoneNumber"].ToString();
+                        contact.Email = reader["Email"].ToString();
+                        contact.Position = reader["Position"].ToString();
                     }
                 }
             }
@@ -148,6 +152,56 @@ namespace ResumeBuilder_FINAL
                 con.Open();
 
                 SQLiteCommand deleteCom = new SQLiteCommand("DELETE FROM CONTACTS WHERE id = @Id", con);
+                deleteCom.Parameters.AddWithValue("@Id", contact.Id);
+
+                try
+                {
+                    deleteCom.ExecuteNonQuery();
+                }
+                catch (SQLiteException ex)
+                {
+                    Console.WriteLine("Error Generated. Details: " + ex.ToString());
+                }
+            }
+            return row;
+        }
+
+        public List<Contact> ReadAllContacts()
+        {
+            List<Contact> list = new List<Contact>();
+
+            using (SQLiteConnection con = new SQLiteConnection(ConString))
+            {
+                con.Open();
+                SQLiteCommand com = new SQLiteCommand("SELECT * FROM PERSONS", con);
+
+                using (SQLiteDataReader reader = com.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Contact contact = new Contact();
+
+                        if (Int32.TryParse(reader["Id"].ToString(), out int idChecking))
+                        {
+                            contact.Id = idChecking;
+                        }
+
+                        contact.FirstName = reader["FirstName"].ToString();
+                        contact.LastName = reader["LastName"].ToString();
+
+                        if (Int32.TryParse(reader["Age"].ToString(), out int age))
+                        {
+                            contact.Age = age;
+                        }
+
+                        contact.PhoneNumber = reader["PhoneNumber"].ToString();
+                        contact.Email = reader["Email"].ToString();
+                        contact.Position = reader["Position"].ToString();
+
+                        list.Add(contact);
+                    }
+                }
+                return list;
             }
         }
 
