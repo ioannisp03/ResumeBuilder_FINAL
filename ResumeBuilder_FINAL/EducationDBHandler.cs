@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ResumeBuilder_FINAL
 {
-    //added this
+    //fixing commit issues
     public sealed class EducationDBHandler
     {
         static readonly string ConString = ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
