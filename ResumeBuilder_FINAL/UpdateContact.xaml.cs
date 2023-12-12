@@ -35,19 +35,27 @@ namespace ResumeBuilder_FINAL
 
         private void btnContactChanges_Click(object sender, RoutedEventArgs e)
         {
-            contact.FirstName = fNameTextBox.Text;
-            contact.LastName = lNameTextBox.Text;
-            contact.Age = Convert.ToInt32(ageTextBox.Text);
-            contact.PhoneNumber = phoneNumberTextBox.Text;
-            contact.Email = emailTextBox.Text;
-            contact.Position = positionTextBox.Text;
+            if (contact != null)
+            {
+                contact.FirstName = fNameTextBox.Text;
+                contact.LastName = lNameTextBox.Text;
+                contact.Age = Convert.ToInt32(ageTextBox.Text);
+                contact.PhoneNumber = phoneNumberTextBox.Text;
+                contact.Email = emailTextBox.Text;
+                contact.Position = positionTextBox.Text;
 
-            ContactDBHandler db = ContactDBHandler.Instance;
+                ContactDBHandler db = ContactDBHandler.Instance;
 
-            db.UpdateContactInfo(contact);
+                db.UpdateContactInfo(contact);
 
-            Close();
-            Close();
+                Close();
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Need to have every field filled.",
+                    "Null Fields Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }
