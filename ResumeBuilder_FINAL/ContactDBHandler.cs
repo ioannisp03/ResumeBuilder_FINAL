@@ -44,7 +44,7 @@ namespace ResumeBuilder_FINAL
             int newId = 0;
             int rows = 0;
 
-            using (SQLiteConnection con = new SQLiteConnection())
+            using (SQLiteConnection con = new SQLiteConnection(ConString))
             {
                 con.Open();
 
@@ -79,7 +79,7 @@ namespace ResumeBuilder_FINAL
         {
             Contact contact = new Contact();
 
-            using (SQLiteConnection con = new SQLiteConnection())
+            using (SQLiteConnection con = new SQLiteConnection(ConString))
             {
                 con.Open();
 
@@ -115,7 +115,7 @@ namespace ResumeBuilder_FINAL
         {
             int row = 0;
 
-            using (SQLiteConnection con = new SQLiteConnection())
+            using (SQLiteConnection con = new SQLiteConnection(ConString))
             {
                 con.Open();
 
@@ -124,6 +124,7 @@ namespace ResumeBuilder_FINAL
 
                 SQLiteCommand updateCom = new SQLiteCommand(updateQuery, con);
 
+                updateCom.Parameters.AddWithValue("@Id", contact.Id);
                 updateCom.Parameters.AddWithValue("@FirstName", contact.FirstName);
                 updateCom.Parameters.AddWithValue("@LastName", contact.LastName);
                 updateCom.Parameters.AddWithValue("@Age", contact.Age);
@@ -147,7 +148,7 @@ namespace ResumeBuilder_FINAL
         {
             int row = 0;
 
-            using (SQLiteConnection con = new SQLiteConnection())
+            using (SQLiteConnection con = new SQLiteConnection(ConString))
             {
                 con.Open();
 
@@ -173,7 +174,7 @@ namespace ResumeBuilder_FINAL
             using (SQLiteConnection con = new SQLiteConnection(ConString))
             {
                 con.Open();
-                SQLiteCommand com = new SQLiteCommand("SELECT * FROM PERSONS", con);
+                SQLiteCommand com = new SQLiteCommand("SELECT * FROM CONTACTS", con);
 
                 using (SQLiteDataReader reader = com.ExecuteReader())
                 {

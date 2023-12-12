@@ -20,17 +20,40 @@ namespace ResumeBuilder_FINAL
     /// </summary>
     public partial class MainWindow : Window
     {
+        ContactDBHandler contactDBHandler = ContactDBHandler.Instance;
+        List<Contact> contacts = new List<Contact>();
+        
         EducationDBHandler educationDBHandler = EducationDBHandler.Instance;
         List<Education> educations;
 
         public MainWindow()
         {
             InitializeComponent();
+
+            RefreshAllResources();
+        }
+
+        private void RefreshAllResources()
+        {
+            ResumeContact.ItemsSource = null;
+            contacts = contactDBHandler.ReadAllContacts();
+            ResumeContact.ItemsSource = contacts;
+
+            ResumeExperience.ItemsSource = null;
+            educations = educationDBHandler.ReadAllEducations();
+            ResumeExperience.ItemsSource= educations;
         }
 
         private void ResumeContact_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            Contact contact = (Contact)ResumeContact.SelectedItem;
 
+            if(contact != null)
+            {
+                ContactInfoWindow contactInfoWindow = new ContactInfoWindow(contact);
+                contactInfoWindow.ShowDialog();
+                RefreshAllResources();
+            }
         }
 
         private void ResumeExperience_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -45,7 +68,9 @@ namespace ResumeBuilder_FINAL
 
         private void btnAddContact_Click(object sender, RoutedEventArgs e)
         {
-
+            AddContact addContact = new AddContact();
+            addContact.ShowDialog();
+            RefreshAllResources();
         }
 
         private void btnAddExperience_Click(object sender, RoutedEventArgs e)
@@ -57,7 +82,7 @@ namespace ResumeBuilder_FINAL
         {
             AddEducationWindow addEducationWindow = new AddEducationWindow();
             addEducationWindow.ShowDialog();
-
+            RefreshAllResources();
         }
 
         private void ExportPDF_Click(object sender, RoutedEventArgs e)
