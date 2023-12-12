@@ -31,6 +31,8 @@ namespace ResumeBuilder_FINAL
             InitializeComponent();
 
             RefreshAllResources();
+            lblCreated.Content = DateTime.Now.ToString();
+            lblUpdated.Content = DateTime.Now.ToString();
         }
 
         private void RefreshAllResources()
@@ -42,6 +44,8 @@ namespace ResumeBuilder_FINAL
             ResumeExperience.ItemsSource = null;
             educations = educationDBHandler.ReadAllEducations();
             ResumeExperience.ItemsSource= educations;
+
+            lblUpdated.Content = DateTime.Now.ToString();
         }
 
         private void ResumeContact_SelectionChanged(object sender, SelectionChangedEventArgs e)

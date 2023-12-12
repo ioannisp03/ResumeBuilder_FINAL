@@ -37,7 +37,7 @@
                     HorizontalAlignment="Center" Margin="20">
             <StackPanel Orientation="Horizontal" Margin="0, 0, 10, 0">
                 <Label Content="Created on:" FontWeight="Bold"/>
-                <Label x:Name="lblCreated" Content="// Will be set on window open time //"/>
+                <Label x:Name="lblCreated"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="10, 0, 0, 0">
                 <Label Content="Last modified on:" FontWeight="Bold"/>
