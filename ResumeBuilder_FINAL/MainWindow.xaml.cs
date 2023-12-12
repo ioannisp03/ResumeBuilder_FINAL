@@ -26,12 +26,37 @@ namespace ResumeBuilder_FINAL
             InitializeComponent();
         }
 
-        private void ResumeUsers_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ResumeContact_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
 
-        private void btnAddUser_Click(object sender, RoutedEventArgs e)
+        private void ResumeExperience_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void ResumeEducation_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void btnAddContact_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnAddExperience_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnAddEducation_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ExportPDF_Click(object sender, RoutedEventArgs e)
         {
 
         }

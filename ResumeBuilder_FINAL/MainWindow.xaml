@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ResumeBuilder_FINAL"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="1000">
     <Window.Resources>
         
     </Window.Resources>
@@ -30,28 +30,54 @@
                DockPanel.Dock="Top"/>
         <Label DockPanel.Dock="Top" HorizontalAlignment="Center" FontSize="20"
             Content="Made by Charles Séguin, Adem Bessam and Ioannis Panaritis"/>
-        <Button Content="Add User" Name="btnAddUser" Click="btnAddUser_Click"
-        DockPanel.Dock="Bottom" 
-        Width="75" Height="20"
-        HorizontalAlignment="Center" Margin="20"/>
-        <!-- 
-            Clicking on the button will bring the user to a window where
-            they will be prompted to enter their contact information
-        -->
-        <StackPanel Margin="10">
-            <Label Content="Saved Users"
+        
+        <Button x:Name="ExportPDF" Click="ExportPDF_Click" Content="Export to PDF" DockPanel.Dock="Top" Width="100"/>
+        
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal"
+                    HorizontalAlignment="Center" Margin="20">
+            <StackPanel Orientation="Horizontal" Margin="0, 0, 10, 0">
+                <Label Content="Created on:" FontWeight="Bold"/>
+                <Label x:Name="lblCreated" Content="// Will be set on window open time //"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10, 0, 0, 0">
+                <Label Content="Last modified on:" FontWeight="Bold"/>
+                <Label x:Name="lblUpdated" Content="// Will be set on update window closed time //"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Margin="10" DockPanel.Dock="Left" Width="300">
+            <Label Content="Contact Information"
                    FontWeight="Bold" FontSize="18"
                    HorizontalAlignment="Center"/>
-            <DataGrid Name="ResumeUsers" 
-                      SelectionChanged="ResumeUsers_SelectionChanged"/>
-                      <!-- 
-                           Clicking on a user will bring us to a window with his or her 
-                           info with the option to update and delete 
-                            
-                           AND then also the option to create, view, modify and delete a resume with their contact 
-                           information passed to it. (Will need button to open create resume window)
-                      -->
+            <DataGrid Name="ResumeContact" 
+                      SelectionChanged="ResumeContact_SelectionChanged"/>
+            <Button Content="Add Contact Information" 
+                    x:Name="btnAddContact" 
+                    Click="btnAddContact_Click"
+                    Margin="10"/>
         </StackPanel>
-        
+        <StackPanel Margin="10" Width="300">
+            <Label Content="Professional Experience"
+           FontWeight="Bold" FontSize="18"
+           HorizontalAlignment="Center"/>
+            <DataGrid Name="ResumeExperience" 
+              SelectionChanged="ResumeExperience_SelectionChanged"/>
+            <Button Content="Add Professional Experience" 
+                    x:Name="btnAddExperience" 
+                    Click="btnAddExperience_Click"
+                    Margin="10"/>            
+        </StackPanel>
+        <StackPanel Margin="10" DockPanel.Dock="Right" Width="300">
+            <Label Content="Education"
+           FontWeight="Bold" FontSize="18"
+           HorizontalAlignment="Center"/>
+            <DataGrid Name="ResumeEducation" 
+              SelectionChanged="ResumeEducation_SelectionChanged"/>
+            <Button Content="Add Diploma" 
+                    x:Name="btnAddEducation" 
+                    Click="btnAddEducation_Click"
+                    Margin="10"/>            
+        </StackPanel>        
+
     </DockPanel>
 </Window>
