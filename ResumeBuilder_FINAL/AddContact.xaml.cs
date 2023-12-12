@@ -23,5 +23,20 @@ namespace ResumeBuilder_FINAL
         {
             InitializeComponent();
         }
+
+        private void SubmitButton_Click(object sender, RoutedEventArgs e)
+        {
+            Contact addedContact = new Contact();
+            addedContact.FirstName = fNameTextBox.Text;
+            addedContact.LastName = lNameTextBox.Text;
+            addedContact.Age = Convert.ToInt32(ageTextBox.Text);
+            addedContact.PhoneNumber = phoneNumberTextBox.Text;
+            addedContact.Email = emailTextBox.Text;
+            addedContact.Position = positionTextBox.Text;
+
+            ContactDBHandler db = ContactDBHandler.Instance;
+            db.AddContact(addedContact);
+            Close();
+        }
     }
 }
