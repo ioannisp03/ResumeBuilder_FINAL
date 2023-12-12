@@ -35,7 +35,8 @@ namespace ResumeBuilder_FINAL
 
         private void btnContactChanges_Click(object sender, RoutedEventArgs e)
         {
-            if (contact != null)
+            if (fNameTextBox.Text != null && lNameTextBox.Text != null && ageTextBox.Text != null && phoneNumberTextBox.Text != null 
+                && emailTextBox.Text != null && positionTextBox.Text != null)
             {
                 contact.FirstName = fNameTextBox.Text;
                 contact.LastName = lNameTextBox.Text;
