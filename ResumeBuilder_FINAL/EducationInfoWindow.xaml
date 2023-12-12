@@ -1,0 +1,40 @@
+﻿<Window x:Class="ResumeBuilder_FINAL.EducationInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ResumeBuilder_FINAL"
+        mc:Ignorable="d"
+        Title="EducationInfoWindow" Height="450" Width="400">
+    <StackPanel Margin="10">
+        <Label Content="Education Info" HorizontalAlignment="Center" FontSize="25" FontWeight="Bold" Grid.ColumnSpan="2" Margin="0,0,0,20"/>
+        <StackPanel Orientation="Horizontal" Margin="0,5">
+            <Label Width="125" FontWeight="Bold">Academic Degree:</Label>
+            <TextBlock x:Name="academicDegreeTextBlock"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,5">
+            <Label Width="125" FontWeight="Bold">Major/Field of Study</Label>
+            <TextBlock x:Name="majorFieldOfStudyTextBlock"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,5">
+            <Label Width="125" FontWeight="Bold">Institution:</Label>
+            <TextBlock x:Name="institutionTextBlock"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,5">
+            <Label Width="125" FontWeight="Bold">Year of Completion</Label>
+            <TextBlock x:Name="yearOfCompletionTextBlock"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,5">
+            <Label Width="125" FontWeight="Bold">Details:</Label>
+            <TextBlock x:Name="detailsTextBlock"/>
+        </StackPanel>
+     
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20">
+            <Button x:Name="btnEditEducation" Click="btnEditEducation_Click"  Content="Update"
+                Width="75" Margin="20"/>
+            <Button x:Name="btnDeleteEducation" Click="btnDeleteEducation_Click" Content="Delete"
+                Width="75" Margin="20"/>
+        </StackPanel>
+
+    </StackPanel>
+</Window>
