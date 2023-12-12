@@ -20,6 +20,8 @@ namespace ResumeBuilder_FINAL
     /// </summary>
     public partial class MainWindow : Window
     {
+        EducationDBHandler educationDBHandler = EducationDBHandler.Instance;
+        List<Education> educations;
 
         public MainWindow()
         {
@@ -53,6 +55,8 @@ namespace ResumeBuilder_FINAL
 
         private void btnAddEducation_Click(object sender, RoutedEventArgs e)
         {
+            AddEducationWindow addEducationWindow = new AddEducationWindow();
+            addEducationWindow.ShowDialog();
 
         }
 
