@@ -62,7 +62,15 @@ namespace ResumeBuilder_FINAL
 
         private void ResumeExperience_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            Experience experience = (Experience)ResumeExperience.SelectedItem;
 
+            if(experience != null)
+            {
+                ProfessionalExperienceWindow professionalExperienceWindow = new ProfessionalExperienceWindow(experience);
+
+                professionalExperienceWindow.ShowDialog();
+                RefreshAllResources();
+            }
         }
 
         private void ResumeEducation_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -95,6 +103,9 @@ namespace ResumeBuilder_FINAL
 
         private void btnAddExperience_Click(object sender, RoutedEventArgs e)
         {
+            AddExperience addExperience = new AddExperience();
+            addExperience.ShowDialog();
+            RefreshAllResources();
 
         }
 
