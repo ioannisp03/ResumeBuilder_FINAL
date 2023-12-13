@@ -9,24 +9,27 @@
 
 
     <StackPanel Margin="10">
-        <Label Content="Edit Professional Experience" HorizontalAlignment="Center" FontSize="25" FontWeight="Bold" Grid.ColumnSpan="2" Margin="0,0,0,20"/>
+        <Label Content="Add Professional Experience" HorizontalAlignment="Center" FontSize="25" FontWeight="Bold" Grid.ColumnSpan="2" Margin="0,0,0,20"/>
         <StackPanel Orientation="Horizontal" Margin="0,5">
             <Label Width="125" FontWeight="Bold">Compagny Name:</Label>
-            <TextBox x:Name="fNameTextBox"/>
+            <TextBox x:Name="CompagnyNameTextBox"/>
         </StackPanel>
+
         <StackPanel Orientation="Horizontal" Margin="0,5">
             <Label Width="125" FontWeight="Bold">Position:</Label>
-            <TextBox x:Name="lNameTextBox"/>
+            <TextBox x:Name="PositionTextBox"/>
         </StackPanel>
+
         <StackPanel Orientation="Horizontal" Margin="0,5">
             <Label Width="125" FontWeight="Bold">First Day:</Label>
-            <TextBox x:Name="ageTextBox"/>
+            <TextBox x:Name="FirstDayTestBox"/>
         </StackPanel>
+
         <StackPanel Orientation="Horizontal" Margin="0,5">
             <Label Width="125" FontWeight="Bold">Last Day:</Label>
-            <TextBox x:Name="phoneNumberTextBox"/>
+            <TextBox x:Name="LastDayTextBox"/>
         </StackPanel>
-        <Button x:Name="btnContactChanges" Click="btnContactChanges_Click" Content="Add"
+        <Button x:Name="btnAddExperience" Click="btnAddExperience_Click" Content="Add"
             Width="75" Margin="20" HorizontalAlignment="Center"/>
     </StackPanel>
     

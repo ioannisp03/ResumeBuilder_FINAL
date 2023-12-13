@@ -19,9 +19,24 @@ namespace ResumeBuilder_FINAL
     /// </summary>
     public partial class AddExperience : Window
     {
-        public AddExperience()
+        ExperienceDBHandler experienceDB = ExperienceDBHandler.Instance;
+
+        Experience experience;
+
+        public AddExperience(Experience experience)
         {
             InitializeComponent();
+            this.experience = experience;
+
+            CompagnyNameTextBox.Text = experience.CompagnyName;
+            PositionTextBox.Text = experience.Position;
+            FirstDayTestBox.Text = experience.StartedDate;
+            LastDayTextBox.Text = experience.EndedDate;
+        }
+
+        private void btnAddExperience_Click(object sender, RoutedEventArgs e)
+        {
+            experienceDB.AddExperience(experience);
         }
     }
 }
