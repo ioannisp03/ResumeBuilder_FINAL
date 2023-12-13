@@ -128,7 +128,7 @@ namespace ResumeBuilder_FINAL
             string experiencesText = "";
             foreach (Experience exp in experiences)
             {
-                experiencesText += $"\n\t{exp.Position} ({exp.StartedDate}-{exp.EndedDate}) at {exp.CompagnyName}";
+                experiencesText += $"\n\t{exp.Position} ({exp.StartedDate}-{exp.EndedDate}) at {exp.CompanyName}";
             }
             rect = new XRect(0, 140, page.Width - 20, 220);
             tf.Alignment = XParagraphAlignment.Left;
