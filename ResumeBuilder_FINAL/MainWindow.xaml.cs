@@ -41,9 +41,9 @@ namespace ResumeBuilder_FINAL
             contacts = contactDBHandler.ReadAllContacts();
             ResumeContact.ItemsSource = contacts;
 
-            ResumeExperience.ItemsSource = null;
+            ResumeEducation.ItemsSource = null;
             educations = educationDBHandler.ReadAllEducations();
-            ResumeExperience.ItemsSource= educations;
+            ResumeEducation.ItemsSource= educations;
 
             lblUpdated.Content = DateTime.Now.ToString();
         }
