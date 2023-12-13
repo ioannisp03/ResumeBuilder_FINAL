@@ -14,9 +14,8 @@
         </Style>
         <Style TargetType="Label">
             <Setter Property="Width" Value="200"/>
-
-
-
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="5"/>
         </Style>
 
         <Style TargetType="TextBox">
