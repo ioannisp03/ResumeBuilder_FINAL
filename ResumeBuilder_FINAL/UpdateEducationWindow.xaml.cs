@@ -35,12 +35,13 @@ namespace ResumeBuilder_FINAL
 
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
-            if (academicDegreeTextBox.Text != "" && majorFieldOfStudyTextBox.Text != "" && institutionNameTextBox.Text != "" && completionYearTextBox.Text != "")
+            if (academicDegreeTextBox.Text != "" && majorFieldOfStudyTextBox.Text != "" && institutionNameTextBox.Text != "" && completionYearTextBox.Text != "" && detailsTextBox.Text != "")
             {
                 education.AcademicDegree = academicDegreeTextBox.Text;
                 education.Major_FieldOfStudy = majorFieldOfStudyTextBox.Text;
                 education.InstitutionName = institutionNameTextBox.Text;
                 education.YearOfCompletion = Convert.ToInt32(completionYearTextBox.Text);
+                education.Details = detailsTextBox.Text;
 
                 EducationDBHandler educationDBHandler = EducationDBHandler.Instance;
                 educationDBHandler.UpdateEducation(education);
