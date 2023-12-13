@@ -17,7 +17,7 @@
                HorizontalAlignment="Center"
                DockPanel.Dock="Top"/>
         <Label DockPanel.Dock="Top" FontSize="20"
-            Content="Made by Charles Séguin, Adem Bessam and Ioannis Panaritis" Width="550"/>
+            Content="Made by Charles Séguin, Adem Bessam and Ioannis Panaritis" Width="600"/>
 
         <Button x:Name="ExportPDF" Click="ExportPDF_Click" Content="Export to PDF" DockPanel.Dock="Top" Width="100"/>
 
