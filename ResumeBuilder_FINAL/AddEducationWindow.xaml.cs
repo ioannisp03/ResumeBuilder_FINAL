@@ -14,7 +14,7 @@ using System.Windows.Shapes;
 
 namespace ResumeBuilder_FINAL
 {
-    
+
     public partial class AddEducationWindow : Window
     {
         public AddEducationWindow()
@@ -26,19 +26,26 @@ namespace ResumeBuilder_FINAL
 
         private void submitButton_Click(object sender, RoutedEventArgs e)
         {
-            Education newEducation = new Education();
-            newEducation.AcademicDegree = academicDegree.Text;
-            newEducation.Major_FieldOfStudy = majorFieldOfStudy.Text;
-            newEducation.InstitutionName = institutionName.Text;
-            newEducation.YearOfCompletion = Convert.ToInt32(completionYear.Text);
-            newEducation.Details = details.Text;
+            if (academicDegree.Text != "" && majorFieldOfStudy.Text != "" && institutionName.Text != "" && completionYear.Text != "")
+            {
+                Education newEducation = new Education();
+                newEducation.AcademicDegree = academicDegree.Text;
+                newEducation.Major_FieldOfStudy = majorFieldOfStudy.Text;
+                newEducation.InstitutionName = institutionName.Text;
+                newEducation.YearOfCompletion = Convert.ToInt32(completionYear.Text);
+                newEducation.Details = details.Text;
 
 
-            EducationDBHandler educationDBHandler = EducationDBHandler.Instance;
-            educationDBHandler.AddEducation(newEducation);
-            Close();
+                EducationDBHandler educationDBHandler = EducationDBHandler.Instance;
+                educationDBHandler.AddEducation(newEducation);
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Need to have every field filled.",
+                    "Null Fields Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
         }
     }
 }
-//updateEducation,AddEducation
-//AddContact,ContactInfoWindow,updateContact

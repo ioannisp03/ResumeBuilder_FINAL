@@ -35,15 +35,23 @@ namespace ResumeBuilder_FINAL
 
         private void saveButton_Click(object sender, RoutedEventArgs e)
         {
-            education.AcademicDegree = academicDegreeTextBox.Text;
-            education.Major_FieldOfStudy = majorFieldOfStudyTextBox.Text;
-            education.InstitutionName = institutionNameTextBox.Text;
-            education.YearOfCompletion = Convert.ToInt32(completionYearTextBox.Text);
+            if (academicDegreeTextBox.Text != "" && majorFieldOfStudyTextBox.Text != "" && institutionNameTextBox.Text != "" && completionYearTextBox.Text != "")
+            {
+                education.AcademicDegree = academicDegreeTextBox.Text;
+                education.Major_FieldOfStudy = majorFieldOfStudyTextBox.Text;
+                education.InstitutionName = institutionNameTextBox.Text;
+                education.YearOfCompletion = Convert.ToInt32(completionYearTextBox.Text);
 
-            EducationDBHandler educationDBHandler = EducationDBHandler.Instance;
-            educationDBHandler.UpdateEducation(education);
-            Close();
-            Close();
+                EducationDBHandler educationDBHandler = EducationDBHandler.Instance;
+                educationDBHandler.UpdateEducation(education);
+                Close();
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Need to have every field filled.",
+                    "Null Fields Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }
