@@ -32,7 +32,7 @@
                 <TextBox x:Name="LastDayTextBox"/>
             </StackPanel>
 
-        <Button x:Name="btnEditExperience" Click="btnEditExperience_Click" Content="Edit"
+        <Button x:Name="btnEditExperience" Click="btnEditExperience_Click" Content="Save"
             Width="75" Margin="20" HorizontalAlignment="Center"/>
     </StackPanel>
 </Window>

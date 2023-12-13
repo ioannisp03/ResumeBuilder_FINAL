@@ -38,15 +38,15 @@ namespace ResumeBuilder_FINAL
         {
             if (CompanyNameTextBox.Text != null && PositionTextBox.Text != null && FirstDayTestBox.Text != null && LastDayTextBox.Text != null)
             {
-                Experience updatedExperience = new Experience();
 
-                updatedExperience.CompanyName = CompanyNameTextBox.Text;
-                updatedExperience.Position = PositionTextBox.Text;
-                updatedExperience.StartedDate = FirstDayTestBox.Text;
-                updatedExperience.EndedDate = LastDayTextBox.Text;
+                experience.CompanyName = CompanyNameTextBox.Text;
+                experience.Position = PositionTextBox.Text;
+                experience.StartedDate = FirstDayTestBox.Text;
+                experience.EndedDate = LastDayTextBox.Text;
 
                 ExperienceDBHandler experienceDB = ExperienceDBHandler.Instance;
-                experienceDB.UpdateExperience(updatedExperience);
+                experienceDB.UpdateExperience(experience);
+
                 Close();
                 Close();
             }
