@@ -96,11 +96,17 @@ namespace ResumeBuilder_FINAL
         private void btnAddContact_Click(object sender, RoutedEventArgs e)
         {
 
-            AddContact addContact = new AddContact();
-            addContact.ShowDialog();
-            RefreshAllResources();
-            btnAddContact.IsEnabled = false;
-            btnAddContact.Content = "Cannot add another contact";
+            if (contacts.Any()) //checks to see if theres an item inside the list is true
+            {
+                MessageBox.Show("Cannot create multiple contact informations.",
+                    "Contact Information Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                AddContact addContact = new AddContact();
+                addContact.ShowDialog();
+                RefreshAllResources();
+            }
 
 
         }
