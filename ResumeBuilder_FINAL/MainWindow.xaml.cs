@@ -122,7 +122,7 @@ namespace ResumeBuilder_FINAL
 
         private void ExportPDF_Click(object sender, RoutedEventArgs e)
         {
-
+            ExportToPDF.exportToPDF(contacts, experiences, educations);
         }
     }
 }
