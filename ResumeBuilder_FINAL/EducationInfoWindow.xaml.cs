@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 namespace ResumeBuilder_FINAL
 {
     /// <summary>
-    /// Interaction logic for EducationInfoWindow.xaml 
+    /// Interaction logic for EducationInfoWindow.xaml
     /// </summary>
     public partial class EducationInfoWindow : Window
     {
