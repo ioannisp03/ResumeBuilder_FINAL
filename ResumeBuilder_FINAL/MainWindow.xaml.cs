@@ -26,6 +26,9 @@ namespace ResumeBuilder_FINAL
         EducationDBHandler educationDBHandler = EducationDBHandler.Instance;
         List<Education> educations = new List<Education>();
 
+        ExperienceDBHandler ExperienceDBHandler = ExperienceDBHandler.Instance;
+        List<Experience> experiences = new List<Experience>();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -44,6 +47,10 @@ namespace ResumeBuilder_FINAL
             ResumeEducation.ItemsSource = null;
             educations = educationDBHandler.ReadAllEducations();
             ResumeEducation.ItemsSource= educations;
+
+            ResumeExperience.ItemsSource = null;
+            experiences = ExperienceDBHandler.ReadAllExperience();
+            ResumeExperience.ItemsSource = experiences;
 
             lblUpdated.Content = DateTime.Now.ToString();
         }

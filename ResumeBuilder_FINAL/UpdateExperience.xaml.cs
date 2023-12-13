@@ -36,7 +36,19 @@ namespace ResumeBuilder_FINAL
 
         private void btnEditExperience_Click(object sender, RoutedEventArgs e)
         {
-            experienceDB.UpdateExperience(experience);
+            if (CompagnyNameTextBox.Text != null && PositionTextBox.Text != null && FirstDayTestBox.Text != null && LastDayTextBox.Text != null)
+            {
+                Experience updatedExperience = new Experience();
+
+                updatedExperience.CompagnyName = CompagnyNameTextBox.Text;
+                updatedExperience.Position = PositionTextBox.Text;
+                updatedExperience.StartedDate = FirstDayTestBox.Text;
+                updatedExperience.EndedDate = LastDayTextBox.Text;
+
+                ExperienceDBHandler experienceDB = ExperienceDBHandler.Instance;
+                experienceDB.UpdateExperience(updatedExperience);
+                Close();
+            }
         }
     }
 }

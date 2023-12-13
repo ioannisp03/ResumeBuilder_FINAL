@@ -22,7 +22,7 @@
 
         <StackPanel Orientation="Horizontal" Margin="0,5">
             <Label Width="125" FontWeight="Bold">First Day:</Label>
-            <TextBox x:Name="FirstDayTestBox"/>
+            <TextBox x:Name="FirstDayTextBox"/>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Margin="0,5">

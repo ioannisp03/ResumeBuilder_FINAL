@@ -11,11 +11,14 @@ namespace ResumeBuilder_FINAL
 {
     public sealed class ExperienceDBHandler
     {
-        private static readonly ExperienceDBHandler instance = new ExperienceDBHandler();
 
         static readonly string ConString = ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
 
-        private ExperienceDBHandler() { }
+        private static readonly ExperienceDBHandler instance = new ExperienceDBHandler();
+
+        private ExperienceDBHandler() {
+            CreateTable();        
+        }
 
         public static ExperienceDBHandler Instance { 
             get {  return instance; } 

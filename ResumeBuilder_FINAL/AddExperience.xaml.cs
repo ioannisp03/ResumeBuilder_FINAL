@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ResumeBuilder_FINAL
 {
@@ -19,24 +20,36 @@ namespace ResumeBuilder_FINAL
     /// </summary>
     public partial class AddExperience : Window
     {
-        ExperienceDBHandler experienceDB = ExperienceDBHandler.Instance;
 
-        Experience experience;
 
-        public AddExperience(Experience experience)
+        public AddExperience()
         {
             InitializeComponent();
-            this.experience = experience;
-
-            CompagnyNameTextBox.Text = experience.CompagnyName;
-            PositionTextBox.Text = experience.Position;
-            FirstDayTestBox.Text = experience.StartedDate;
-            LastDayTextBox.Text = experience.EndedDate;
         }
+
 
         private void btnAddExperience_Click(object sender, RoutedEventArgs e)
         {
-            experienceDB.AddExperience(experience);
+
+            if (CompagnyNameTextBox.Text != null && PositionTextBox.Text != null && FirstDayTestBox.Text != null && LastDayTextBox.Text != null) {
+                Experience addedExperience = new Experience();
+
+                addedExperience.CompagnyName = CompagnyNameTextBox.Text;
+                addedExperience.Position = PositionTextBox.Text ;
+                addedExperience.StartedDate = FirstDayTextBox.Text;
+                addedExperience.EndedDate = LastDayTextBox.Text;
+
+                ExperienceDBHandler experienceDB = ExperienceDBHandler.Instance;
+                experienceDB.AddExperience(addedExperience);
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Need to have every field filled.",
+                    "Null Fields Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+
         }
     }
 }
