@@ -24,6 +24,7 @@ namespace ResumeBuilder_FINAL
         {
             InitializeComponent();
             this.education = education;
+
             academicDegreeTextBlock.Text = education.AcademicDegree;
             majorFieldOfStudyTextBlock.Text = education.Major_FieldOfStudy;
             institutionTextBlock.Text = education.InstitutionName;

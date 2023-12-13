@@ -24,7 +24,7 @@ namespace ResumeBuilder_FINAL
         List<Contact> contacts = new List<Contact>();
         
         EducationDBHandler educationDBHandler = EducationDBHandler.Instance;
-        List<Education> educations;
+        List<Education> educations = new List<Education>();
 
         public MainWindow()
         {
