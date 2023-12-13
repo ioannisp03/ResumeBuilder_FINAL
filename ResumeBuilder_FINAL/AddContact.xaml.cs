@@ -26,9 +26,10 @@ namespace ResumeBuilder_FINAL
 
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
         {
-            if (fNameTextBox.Text != null && lNameTextBox.Text != null && ageTextBox.Text != null && phoneNumberTextBox.Text != null
-                && emailTextBox.Text != null && positionTextBox.Text != null)
+            if (fNameTextBox.Text != "" && lNameTextBox.Text != "" && ageTextBox.Text != "" && phoneNumberTextBox.Text != ""
+                && emailTextBox.Text != "" && positionTextBox.Text != "" )
             {
+                
                 Contact addedContact = new Contact();
                 addedContact.FirstName = fNameTextBox.Text;
                 addedContact.LastName = lNameTextBox.Text;
