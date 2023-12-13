@@ -11,22 +11,22 @@
         <Label Content="Update Experience" Style="{StaticResource WindowTitleLabel}"/>
 
             <StackPanel Orientation="Horizontal" Margin="0,5">
-                <Label Width="125" FontWeight="Bold">Company Name:</Label>
+                <Label>Company Name:</Label>
                 <TextBox x:Name="CompanyNameTextBox"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,5">
-                <Label Width="125" FontWeight="Bold">Position:</Label>
+                <Label >Position:</Label>
                 <TextBox x:Name="PositionTextBox"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,5">
-                <Label Width="125" FontWeight="Bold">First Day:</Label>
+                <Label>First Day:</Label>
                 <TextBox x:Name="FirstDayTestBox"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,5">
-                <Label Width="125" FontWeight="Bold">Last Day:</Label>
+                <Label>Last Day:</Label>
                 <TextBox x:Name="LastDayTextBox"/>
             </StackPanel>
 

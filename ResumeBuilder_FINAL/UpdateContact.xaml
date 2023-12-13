@@ -9,27 +9,27 @@
     <StackPanel Margin="10">
         <Label Content="Edit Contact Information" Style="{StaticResource WindowTitleLabel}"/>
         <StackPanel Orientation="Horizontal" Margin="0,5">
-            <Label Width="125" FontWeight="Bold">First Name:</Label>
+            <Label>First Name:</Label>
             <TextBox x:Name="fNameTextBox"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="0,5">
-            <Label Width="125" FontWeight="Bold">Last Name:</Label>
+            <Label>Last Name:</Label>
             <TextBox x:Name="lNameTextBox"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="0,5">
-            <Label Width="125" FontWeight="Bold">Age:</Label>
+            <Label>Age:</Label>
             <TextBox x:Name="ageTextBox"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="0,5">
-            <Label Width="125" FontWeight="Bold">Phone Number:</Label>
+            <Label>Phone Number:</Label>
             <TextBox x:Name="phoneNumberTextBox"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="0,5">
-            <Label Width="125" FontWeight="Bold">Email Address:</Label>
+            <Label>Email Address:</Label>
             <TextBox x:Name="emailTextBox"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="0,5">
-            <Label Width="125" FontWeight="Bold">Position Title:</Label>
+            <Label>Position Title:</Label>
             <TextBox x:Name="positionTextBox"/>
         </StackPanel>
         <Button x:Name="btnContactChanges" Click="btnContactChanges_Click" Content="Save"

@@ -9,27 +9,27 @@
     <StackPanel Margin="10">
         <Label Content="Contact Information Details" Style="{StaticResource WindowTitleLabel}"/>
         <StackPanel Orientation="Horizontal" Margin="0,5">
-            <Label Width="125" FontWeight="Bold">First Name: </Label>
+            <Label>First Name: </Label>
             <TextBlock x:Name="fNameTextBlock"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="0,5">
-            <Label Width="125" FontWeight="Bold">Last Name: </Label>
+            <Label>Last Name: </Label>
             <TextBlock x:Name="lNameTextBlock"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="0,5">
-            <Label Width="125" FontWeight="Bold">Age: </Label>
+            <Label>Age: </Label>
             <TextBlock x:Name="ageTextBlock"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="0,5">
-            <Label Width="125" FontWeight="Bold">Phone Number: </Label>
+            <Label>Phone Number: </Label>
             <TextBlock x:Name="phoneNumberTextBlock"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="0,5">
-            <Label Width="125" FontWeight="Bold">Email Address: </Label>
+            <Label>Email Address: </Label>
             <TextBlock x:Name="emailTextBlock"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="0,5">
-            <Label Width="125" FontWeight="Bold">Position Title: </Label>
+            <Label>Position Title: </Label>
             <TextBlock x:Name="positionTextBlock"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20">
