@@ -38,19 +38,19 @@ namespace ResumeBuilder_FINAL
             XRect rect = new XRect(0, 10, page.Width - 20, 50);
             tf.Alignment = XParagraphAlignment.Center;
             string title = currentContact.FirstName + " " + currentContact.LastName;
-            tf.DrawString(title, fontTitle, XBrushes.BlueViolet, rect);
+            tf.DrawString(title, fontTitle, XBrushes.Gold, rect);
 
             string contactText = String.Format("{0}\n{1} - {2} - {3} years old", currentContact.Position, currentContact.PhoneNumber, currentContact.Email, currentContact.Age);
             rect = new XRect(0, 5, page.Width - 20, 30);
             tf.Alignment = XParagraphAlignment.Center;
-            tf.DrawString(contactText, fontRegular, XBrushes.Black, rect);
+            tf.DrawString(contactText, fontRegular, XBrushes.White, rect);
 
             rect = new XRect(0, 5, page.Width - 20, 30);
             tf.Alignment = XParagraphAlignment.Center;
 
 
             string subtitleExperience = "Professional Experience";
-            tf.DrawString(subtitleExperience, fontCategories, XBrushes.BlueViolet, rect);
+            tf.DrawString(subtitleExperience, fontCategories, XBrushes.Gold, rect);
 
             string experiencesText = "";
             foreach(Experience exp in experiences)
@@ -59,10 +59,10 @@ namespace ResumeBuilder_FINAL
             }
             rect = new XRect(0, 220, page.Width - 20, 220);
             tf.Alignment = XParagraphAlignment.Left;
-            tf.DrawString(experiencesText, fontRegular, XBrushes.Black, rect, XStringFormats.TopLeft);
+            tf.DrawString(experiencesText, fontRegular, XBrushes.White, rect, XStringFormats.TopLeft);
 
             string subtitleEducation = "Education";
-            tf.DrawString(subtitleEducation, fontCategories, XBrushes.BlueViolet, rect);
+            tf.DrawString(subtitleEducation, fontCategories, XBrushes.Gold, rect);
 
             string educationText = "";
             foreach(Education education in diplomas)
@@ -107,38 +107,41 @@ namespace ResumeBuilder_FINAL
 
             XTextFormatter tf = new XTextFormatter(gfx);
 
+            XRect rect = new XRect(0, 0, page.Width, page.Height);
+            gfx.DrawRectangle(XBrushes.DarkGray, rect);
+
             // Title
-            XRect rect = new XRect(0, 10, page.Width - 20, 50);
+            rect = new XRect(0, 10, page.Width - 20, 50);
             tf.Alignment = XParagraphAlignment.Center;
             string title = $"{currentContact.FirstName} {currentContact.LastName}";
-            tf.DrawString(title, fontTitle, XBrushes.BlueViolet, rect);
+            tf.DrawString(title, fontTitle, XBrushes.Gold, rect);
 
             // Contact Information
             string contactText = $"{currentContact.Position}\n{currentContact.PhoneNumber} | {currentContact.Email} | {currentContact.Age} years old";
             rect = new XRect(0, 70, page.Width - 20, 30);
             tf.Alignment = XParagraphAlignment.Center;
-            tf.DrawString(contactText, fontRegular, XBrushes.Black, rect);
+            tf.DrawString(contactText, fontRegular, XBrushes.White, rect);
 
             // Professional Experience
             rect = new XRect(0, 110, page.Width - 20, 30);
             tf.Alignment = XParagraphAlignment.Center;
             string subtitleExperience = "Professional Experience";
-            tf.DrawString(subtitleExperience, fontCategories, XBrushes.BlueViolet, rect);
+            tf.DrawString(subtitleExperience, fontCategories, XBrushes.Gold, rect);
 
             string experiencesText = "";
             foreach (Experience exp in experiences)
             {
-                experiencesText += $"\n\t{exp.Position} ({exp.StartedDate}-{exp.EndedDate}) at {exp.CompanyName}";
+                experiencesText += $"\n{exp.Position} ({exp.StartedDate}-{exp.EndedDate}) at {exp.CompanyName}";
             }
             rect = new XRect(0, 140, page.Width - 20, 220);
             tf.Alignment = XParagraphAlignment.Left;
-            tf.DrawString(experiencesText, fontRegular, XBrushes.Black, rect, XStringFormats.TopLeft);
+            tf.DrawString(experiencesText, fontRegular, XBrushes.White, rect, XStringFormats.TopLeft);
 
             // Education
             rect = new XRect(0, 380, page.Width - 20, 30);
             tf.Alignment = XParagraphAlignment.Center;
             string subtitleEducation = "Education";
-            tf.DrawString(subtitleEducation, fontCategories, XBrushes.BlueViolet, rect);
+            tf.DrawString(subtitleEducation, fontCategories, XBrushes.Gold, rect);
 
             string educationText = "";
             foreach (Education education in diplomas)
@@ -148,7 +151,7 @@ namespace ResumeBuilder_FINAL
 
             rect = new XRect(0, 410, page.Width - 20, 220);
             tf.Alignment = XParagraphAlignment.Left;
-            tf.DrawString(educationText, fontRegular, XBrushes.Black, rect, XStringFormats.TopLeft);
+            tf.DrawString(educationText, fontRegular, XBrushes.White, rect, XStringFormats.TopLeft);
 
             // Save PDF
             const string filename = "Resume.pdf";
