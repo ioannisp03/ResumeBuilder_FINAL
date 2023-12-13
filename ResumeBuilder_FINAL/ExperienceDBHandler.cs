@@ -120,10 +120,10 @@ namespace ResumeBuilder_FINAL
 
                 SQLiteCommand updatecom = new SQLiteCommand(query, con);
                 updatecom.Parameters.AddWithValue("@Id", experience.Id);
-                updatecom.Parameters.AddWithValue("@FirstName", experience.CompanyName);
-                updatecom.Parameters.AddWithValue("@LastName", experience.StartedDate);
-                updatecom.Parameters.AddWithValue("@City", experience.EndedDate);
-                updatecom.Parameters.AddWithValue("@Age", experience.Position);
+                updatecom.Parameters.AddWithValue("@CompanyName", experience.CompanyName);
+                updatecom.Parameters.AddWithValue("@StartedDate", experience.StartedDate);
+                updatecom.Parameters.AddWithValue("@EndedDate", experience.EndedDate);
+                updatecom.Parameters.AddWithValue("@Position", experience.Position);
 
                 try
                 {
