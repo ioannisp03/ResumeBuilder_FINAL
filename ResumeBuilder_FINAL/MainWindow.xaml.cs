@@ -34,7 +34,7 @@ namespace ResumeBuilder_FINAL
             lblCreated.Content = DateTime.Now.ToString();
             lblUpdated.Content = DateTime.Now.ToString();
         }
-
+         
         private void RefreshAllResources()
         {
             ResumeContact.ItemsSource = null;
