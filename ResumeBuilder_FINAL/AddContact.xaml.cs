@@ -22,6 +22,8 @@ namespace ResumeBuilder_FINAL
         public AddContact()
         {
             InitializeComponent();
+            this.ResizeMode = ResizeMode.NoResize;
+
         }
 
         private void SubmitButton_Click(object sender, RoutedEventArgs e)

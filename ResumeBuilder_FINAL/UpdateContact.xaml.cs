@@ -23,6 +23,8 @@ namespace ResumeBuilder_FINAL
         public UpdateContact(Contact contact)
         {
             InitializeComponent();
+            this.ResizeMode = ResizeMode.NoResize;
+
             this.contact = contact;
 
             fNameTextBox.Text = contact.FirstName;

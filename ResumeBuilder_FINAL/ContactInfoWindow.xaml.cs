@@ -23,6 +23,8 @@ namespace ResumeBuilder_FINAL
         public ContactInfoWindow(Contact contact)
         {
             InitializeComponent();
+            this.ResizeMode = ResizeMode.NoResize;
+
             this.contact = contact;
 
             fNameTextBlock.Text = contact.FirstName;

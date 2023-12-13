@@ -9,19 +9,7 @@
     <Window.Resources>
 
     </Window.Resources>
-    <!--
-        Data we want to show:
-            Data that concern the user (all required):
-                - Name
-                - Age
-                - Phone Number
-                - Email Address
-            Other data that we can have multiple of (none are required):
-                - Education: Diploma(s)
-                - Professional Experience: Work Field Experience(s)
-                - Executive Summary: Social Involvment(s) ()
-                - References
-    -->
+  
 
     <DockPanel Margin="10">
         <Label Content="Resume Builder" 
@@ -41,7 +29,6 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="10, 0, 0, 0">
                 <Label Content="Last modified on:" FontWeight="Bold"/>
-                <Label x:Name="lblUpdated" Content="// Will be set on update window closed time //"/>
             </StackPanel>
         </StackPanel>
 
