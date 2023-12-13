@@ -9,23 +9,23 @@
     <StackPanel Margin="10">
         <Label Content="Education Info" Style="{StaticResource WindowTitleLabel}"/>
         <StackPanel Orientation="Horizontal" Margin="0,5">
-            <Label Width="125" FontWeight="Bold">Academic Degree:</Label>
+            <Label>Academic Degree:</Label>
             <TextBlock x:Name="academicDegreeTextBlock"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="0,5">
-            <Label Width="125" FontWeight="Bold">Major/Field of Study</Label>
+            <Label>Major/Field of Study</Label>
             <TextBlock x:Name="majorFieldOfStudyTextBlock"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="0,5">
-            <Label Width="125" FontWeight="Bold">Institution:</Label>
+            <Label>Institution:</Label>
             <TextBlock x:Name="institutionTextBlock"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="0,5">
-            <Label Width="125" FontWeight="Bold">Year of Completion</Label>
+            <Label>Year of Completion</Label>
             <TextBlock x:Name="yearOfCompletionTextBlock"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="0,5">
-            <Label Width="125" FontWeight="Bold">Details:</Label>
+            <Label>Details:</Label>
             <TextBlock x:Name="detailsTextBlock"/>
         </StackPanel>
      

@@ -29,7 +29,7 @@
                HorizontalAlignment="Center"
                DockPanel.Dock="Top"/>
         <Label DockPanel.Dock="Top" FontSize="20"
-            Content="Made by Charles Séguin, Adem Bessam and Ioannis Panaritis" Width="554"/>
+            Content="Made by Charles Séguin, Adem Bessam and Ioannis Panaritis" Width="550"/>
 
         <Button x:Name="ExportPDF" Click="ExportPDF_Click" Content="Export to PDF" DockPanel.Dock="Top" Width="100"/>
 
@@ -59,7 +59,7 @@
         <StackPanel Margin="10" Width="300">
             <Label Content="Professional Experience"
            FontWeight="Bold" FontSize="18"
-           HorizontalAlignment="Center"/>
+           HorizontalAlignment="Center" Width="232"/>
             <DataGrid Name="ResumeExperience" 
               SelectionChanged="ResumeExperience_SelectionChanged"/>
             <Button Content="Add Professional Experience" 
@@ -69,7 +69,7 @@
         </StackPanel>
         <StackPanel Margin="10" DockPanel.Dock="Right" Width="300">
             <Label Content="Education"
-           FontWeight="Bold" FontSize="18" Width="96"
+            FontWeight="Bold" FontSize="18" Width="96"
            />
             <DataGrid x:Name="ResumeEducation" 
               SelectionChanged="ResumeEducation_SelectionChanged"/>
