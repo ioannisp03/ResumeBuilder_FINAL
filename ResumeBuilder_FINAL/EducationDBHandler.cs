@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 
 namespace ResumeBuilder_FINAL
 {
-    //fixing commit issues
     public sealed class EducationDBHandler
     {
         static readonly string ConString = ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
@@ -16,17 +15,7 @@ namespace ResumeBuilder_FINAL
 
         private EducationDBHandler()
         {
-            CreateTable();
-            Education education1 = new Education
-            {
-                AcademicDegree = "MBAExample",
-                Major_FieldOfStudy = "BusinessExample",
-                InstitutionName = "ConcordiaExample",
-                YearOfCompletion = 2010,
-                Details = "Graduated with honors, received a 4.9/5.0 GPA"
-            };
-            AddEducation(education1);
-
+            CreateEducationTable();
         }
 
         public static EducationDBHandler Instance
@@ -34,7 +23,7 @@ namespace ResumeBuilder_FINAL
             get { return instance; }
         }
 
-        public void CreateTable()
+        public void CreateEducationTable()
         {
             using (SQLiteConnection con = new SQLiteConnection(ConString))
             {
@@ -60,8 +49,9 @@ namespace ResumeBuilder_FINAL
 
                 con.Open();
 
-                string query = "INSERT INTO EDUCATIONS (AcademicDegree,Major_FieldOfStudy,InstitutionName,YearOfCompletion "
-                    + "VALUES (@AcademicDegree, @Major_FieldOfStudy, @InstitutionName, @YearOfCompletion";
+                string query = "INSERT INTO EDUCATIONS (AcademicDegree, Major_FieldOfStudy, InstitutionName, YearOfCompletion, Details) " +
+               "VALUES (@AcademicDegree, @Major_FieldOfStudy, @InstitutionName, @YearOfCompletion, @Details)";
+
 
                 SQLiteCommand addEducationCMD = new SQLiteCommand(query, con);
                 addEducationCMD.Parameters.AddWithValue("@AcademicDegree", education.AcademicDegree);
@@ -76,7 +66,6 @@ namespace ResumeBuilder_FINAL
                     // get the rowid inserted
                     addEducationCMD.CommandText = "select last_insert_rowid()";
                     Int64 LastRowID64 = Convert.ToInt64(addEducationCMD.ExecuteScalar());
-                    // grab the bottom 32-bits as the unique id of the row
                     newId = Convert.ToInt32(LastRowID64);
                 }
                 catch (SQLiteException ex)
@@ -94,6 +83,7 @@ namespace ResumeBuilder_FINAL
             using (SQLiteConnection con = new SQLiteConnection(ConString))
             {
                 con.Open();
+
                 SQLiteCommand getEducationCMD = new SQLiteCommand("select * from EDUCATIONS where Id = @Id", con);
                 getEducationCMD.Parameters.AddWithValue("@Id", id);
 

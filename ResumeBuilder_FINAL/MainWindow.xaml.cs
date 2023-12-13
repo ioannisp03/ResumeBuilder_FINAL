@@ -24,7 +24,7 @@ namespace ResumeBuilder_FINAL
         List<Contact> contacts = new List<Contact>();
         
         EducationDBHandler educationDBHandler = EducationDBHandler.Instance;
-        List<Education> educations;
+        List<Education> educations = new List<Education>();
 
         public MainWindow()
         {
@@ -34,16 +34,16 @@ namespace ResumeBuilder_FINAL
             lblCreated.Content = DateTime.Now.ToString();
             lblUpdated.Content = DateTime.Now.ToString();
         }
-
+         
         private void RefreshAllResources()
         {
             ResumeContact.ItemsSource = null;
             contacts = contactDBHandler.ReadAllContacts();
             ResumeContact.ItemsSource = contacts;
 
-            ResumeExperience.ItemsSource = null;
+            ResumeEducation.ItemsSource = null;
             educations = educationDBHandler.ReadAllEducations();
-            ResumeExperience.ItemsSource= educations;
+            ResumeEducation.ItemsSource= educations;
 
             lblUpdated.Content = DateTime.Now.ToString();
         }
@@ -67,14 +67,30 @@ namespace ResumeBuilder_FINAL
 
         private void ResumeEducation_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            Education education = (Education)ResumeEducation.SelectedItem;
+
+            if(education != null)
+            {
+                EducationInfoWindow educationInfoWindow = new EducationInfoWindow(education);
+                educationInfoWindow.ShowDialog();
+                RefreshAllResources();
+            }
 
         }
 
         private void btnAddContact_Click(object sender, RoutedEventArgs e)
         {
-            AddContact addContact = new AddContact();
-            addContact.ShowDialog();
-            RefreshAllResources();
+            if (ResumeContact.ItemsSource == null)
+            {
+                MessageBox.Show("Cannot create multiple contact informations.",
+                    "Contact Information Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                AddContact addContact = new AddContact();
+                addContact.ShowDialog();
+                RefreshAllResources();
+            }
         }
 
         private void btnAddExperience_Click(object sender, RoutedEventArgs e)
