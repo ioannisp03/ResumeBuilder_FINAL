@@ -30,8 +30,9 @@
                 <TextBox x:Name="details"/>
             </StackPanel>
             <Button x:Name="submitButton"
+                    Margin="20"
                 Click="submitButton_Click"
-                Content="submit"/>
+                Content="Submit" Width="81"/>
         </StackPanel>
         
     </Grid>

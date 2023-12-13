@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="1000">
     <Window.Resources>
-        
+
     </Window.Resources>
     <!--
         Data we want to show:
@@ -22,7 +22,7 @@
                 - Executive Summary: Social Involvment(s) ()
                 - References
     -->
-    
+
     <DockPanel Margin="10">
         <Label Content="Resume Builder" 
                FontWeight="Bold" FontSize="25"
@@ -30,9 +30,9 @@
                DockPanel.Dock="Top"/>
         <Label DockPanel.Dock="Top" HorizontalAlignment="Center" FontSize="20"
             Content="Made by Charles Séguin, Adem Bessam and Ioannis Panaritis"/>
-        
+
         <Button x:Name="ExportPDF" Click="ExportPDF_Click" Content="Export to PDF" DockPanel.Dock="Top" Width="100"/>
-        
+
         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal"
                     HorizontalAlignment="Center" Margin="20">
             <StackPanel Orientation="Horizontal" Margin="0, 0, 10, 0">
@@ -65,19 +65,19 @@
             <Button Content="Add Professional Experience" 
                     x:Name="btnAddExperience" 
                     Click="btnAddExperience_Click"
-                    Margin="10"/>            
+                    Margin="10"/>
         </StackPanel>
         <StackPanel Margin="10" DockPanel.Dock="Right" Width="300">
             <Label Content="Education"
-           FontWeight="Bold" FontSize="18"
-           HorizontalAlignment="Center"/>
-            <DataGrid Name="ResumeEducation" 
+           FontWeight="Bold" FontSize="18" Width="96"
+           />
+            <DataGrid x:Name="ResumeEducation" 
               SelectionChanged="ResumeEducation_SelectionChanged"/>
             <Button Content="Add Diploma" 
                     x:Name="btnAddEducation" 
                     Click="btnAddEducation_Click"
-                    Margin="10"/>            
-        </StackPanel>        
+                    Margin="10"/>
+        </StackPanel>
 
     </DockPanel>
 </Window>
