@@ -8,7 +8,7 @@
         Title="AddEducationWindow" Height="450" Width="400">
     <Grid>
         <StackPanel Margin="15">
-            <Label Content="Add your Educational Experiences" FontWeight="Bold"/>
+            <Label Content="Educational Experiences" Style="{StaticResource WindowTitleLabel}" />
             <StackPanel Orientation="Horizontal">
                 <Label Content="Enter your academic degree:"/>
                 <TextBox x:Name="academicDegree"  />

@@ -20,6 +20,8 @@ namespace ResumeBuilder_FINAL
         public AddEducationWindow()
         {
             InitializeComponent();
+            this.ResizeMode = ResizeMode.NoResize;
+
         }
 
         private void submitButton_Click(object sender, RoutedEventArgs e)

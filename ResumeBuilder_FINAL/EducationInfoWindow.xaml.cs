@@ -23,6 +23,8 @@ namespace ResumeBuilder_FINAL
         public EducationInfoWindow(Education education)
         {
             InitializeComponent();
+            this.ResizeMode = ResizeMode.NoResize;
+
             this.education = education;
 
             academicDegreeTextBlock.Text = education.AcademicDegree;

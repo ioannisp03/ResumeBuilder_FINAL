@@ -21,6 +21,8 @@ namespace ResumeBuilder_FINAL
         public UpdateEducationWindow(Education education)
         {
             InitializeComponent();
+            this.ResizeMode = ResizeMode.NoResize;
+
             this.education = education;
 
             //display information in textbox
