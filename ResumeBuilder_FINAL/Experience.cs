@@ -16,7 +16,7 @@ namespace ResumeBuilder_FINAL
 
         public override string ToString()
         {
-            string display = String.Format("{0}\t {1}\t {2}\t {3}\t {4}\t {5}\t {6}", Id, CompanyName, StartedDate, EndedDate, Position);
+            string display = String.Format("{0}\t {1}\t {2}\t {3}\t {4}", Id, CompanyName, StartedDate, EndedDate, Position);
             return display;
         }
     }

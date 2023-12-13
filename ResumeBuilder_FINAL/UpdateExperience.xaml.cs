@@ -24,6 +24,7 @@ namespace ResumeBuilder_FINAL
         public UpdateExperience(Experience experience)
         {
             InitializeComponent();
+            this.ResizeMode = ResizeMode.NoResize;
             this.experience = experience;
 
             CompanyNameTextBox.Text = experience.CompanyName;
