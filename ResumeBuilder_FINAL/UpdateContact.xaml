@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="UpdateContact" Height="450" Width="400">
     <StackPanel Margin="10">
-        <Label Content="Edit Contact Information" HorizontalAlignment="Center" FontSize="25" FontWeight="Bold" Grid.ColumnSpan="2" Margin="0,0,0,20"/>
+        <Label Content="Edit Contact Information" Style="{StaticResource WindowTitleLabel}"/>
         <StackPanel Orientation="Horizontal" Margin="0,5">
             <Label Width="125" FontWeight="Bold">First Name:</Label>
             <TextBox x:Name="fNameTextBox"/>

@@ -9,7 +9,7 @@
 
 
     <StackPanel Margin="10">
-        <Label Content="Add Professional Experience" HorizontalAlignment="Center" FontSize="25" FontWeight="Bold" Grid.ColumnSpan="2" Margin="0,0,0,20" Width="345"/>
+        <Label Content="Add Professional Experience" Style="{StaticResource WindowTitleLabel}"/>
         <StackPanel Orientation="Horizontal" Margin="0,5">
             <Label Width="125" FontWeight="Bold">Company Name:</Label>
             <TextBox x:Name="CompanyNameTextBox"/>

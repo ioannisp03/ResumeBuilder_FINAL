@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="ContactInfoWindow" Height="450" Width="400">
     <StackPanel Margin="10">
-        <Label Content="Contact Information Details" HorizontalAlignment="Center" FontSize="25" FontWeight="Bold" Grid.ColumnSpan="2" Margin="0,0,0,20"/>
+        <Label Content="Contact Information Details" Style="{StaticResource WindowTitleLabel}"/>
         <StackPanel Orientation="Horizontal" Margin="0,5">
             <Label Width="125" FontWeight="Bold">First Name: </Label>
             <TextBlock x:Name="fNameTextBlock"/>
