@@ -19,9 +19,30 @@ namespace ResumeBuilder_FINAL
     /// </summary>
     public partial class ProfessionalExperienceWindow : Window
     {
-        public ProfessionalExperienceWindow()
+
+        Experience experience;
+
+        ExperienceDBHandler experienceDB = ExperienceDBHandler.Instance;
+        public ProfessionalExperienceWindow(Experience experience)
         {
             InitializeComponent();
+            this.experience = experience;
+
+            CompagnyNameTextBox.Text = experience.CompagnyName;
+            PositionTextBox.Text = experience.Position;
+            FirstDayTestBox.Text = experience.StartedDate;
+            LastDayTextBox.Text = experience.EndedDate;
+        }
+
+        private void btnExperienceEdit_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateExperience update = new UpdateExperience(experience);
+            update.ShowDialog();
+        }
+
+        private void btnDeleteExperience_Click(object sender, RoutedEventArgs e)
+        {
+            experienceDB.DeleteExperience(experience);
         }
     }
 }

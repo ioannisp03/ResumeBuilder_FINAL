@@ -11,11 +11,14 @@ namespace ResumeBuilder_FINAL
 {
     public sealed class ExperienceDBHandler
     {
-        private static readonly ExperienceDBHandler instance = new ExperienceDBHandler();
 
         static readonly string ConString = ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
 
-        private ExperienceDBHandler() { }
+        private static readonly ExperienceDBHandler instance = new ExperienceDBHandler();
+
+        private ExperienceDBHandler() {
+            CreateTable();        
+        }
 
         public static ExperienceDBHandler Instance { 
             get {  return instance; } 
@@ -105,7 +108,7 @@ namespace ResumeBuilder_FINAL
             return experience;
         }
 
-        public int UpdatePerson(Experience experience)
+        public int UpdateExperience(Experience experience)
         {
             int row = 0;
 
@@ -134,7 +137,7 @@ namespace ResumeBuilder_FINAL
             return row;
         }
 
-        public int DeletePerson(Experience experience)
+        public int DeleteExperience(Experience experience)
         {
             int row = 0;
 

@@ -26,6 +26,9 @@ namespace ResumeBuilder_FINAL
         EducationDBHandler educationDBHandler = EducationDBHandler.Instance;
         List<Education> educations = new List<Education>();
 
+        ExperienceDBHandler ExperienceDBHandler = ExperienceDBHandler.Instance;
+        List<Experience> experiences = new List<Experience>();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -45,6 +48,10 @@ namespace ResumeBuilder_FINAL
             educations = educationDBHandler.ReadAllEducations();
             ResumeEducation.ItemsSource= educations;
 
+            ResumeExperience.ItemsSource = null;
+            experiences = ExperienceDBHandler.ReadAllExperience();
+            ResumeExperience.ItemsSource = experiences;
+
             lblUpdated.Content = DateTime.Now.ToString();
         }
 
@@ -62,7 +69,15 @@ namespace ResumeBuilder_FINAL
 
         private void ResumeExperience_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            Experience experience = (Experience)ResumeExperience.SelectedItem;
 
+            if(experience != null)
+            {
+                ProfessionalExperienceWindow professionalExperienceWindow = new ProfessionalExperienceWindow(experience);
+
+                professionalExperienceWindow.ShowDialog();
+                RefreshAllResources();
+            }
         }
 
         private void ResumeEducation_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -95,6 +110,9 @@ namespace ResumeBuilder_FINAL
 
         private void btnAddExperience_Click(object sender, RoutedEventArgs e)
         {
+            AddExperience addExperience = new AddExperience();
+            addExperience.ShowDialog();
+            RefreshAllResources();
 
         }
 
