@@ -28,7 +28,7 @@ namespace ResumeBuilder_FINAL
             InitializeComponent();
             this.experience = experience;
 
-            CompagnyNameTextBox.Text = experience.CompagnyName;
+            CompanyNameTextBox.Text = experience.CompanyName;
             PositionTextBox.Text = experience.Position;
             FirstDayTestBox.Text = experience.StartedDate;
             LastDayTextBox.Text = experience.EndedDate;

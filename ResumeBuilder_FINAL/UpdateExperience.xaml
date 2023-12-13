@@ -13,8 +13,8 @@
                Margin="0,0,0,20" Width="299"/>
 
             <StackPanel Orientation="Horizontal" Margin="0,5">
-                <Label Width="125" FontWeight="Bold">Compagny Name:</Label>
-                <TextBox x:Name="CompagnyNameTextBox"/>
+                <Label Width="125" FontWeight="Bold">Company Name:</Label>
+                <TextBox x:Name="CompanyNameTextBox"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Margin="0,5">

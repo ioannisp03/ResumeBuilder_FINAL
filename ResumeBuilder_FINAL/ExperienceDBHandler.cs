@@ -33,7 +33,7 @@ namespace ResumeBuilder_FINAL
                 SQLiteCommand command1 = new SQLiteCommand(drop, con);
                 command1.ExecuteNonQuery();
 
-                string table = "create table Experiences (ID integer primary key, CompagnyName text, StartedDate text," +
+                string table = "create table Experiences (ID integer primary key, CompanyName text, StartedDate text," +
                     "EndedDate text, Position text);";
                 SQLiteCommand command2 = new SQLiteCommand(table, con);
                 command2.ExecuteNonQuery();
@@ -50,13 +50,13 @@ namespace ResumeBuilder_FINAL
                 con.Open();
 
                 //create oarameterized query
-                string query = "INSERT INTO Experiences (CompagnyName, StartedDate, EndedDate, Position) " +
-                    "VALUES (@CompagnyName, @StartedDate, @EndedDate, @Position)";
+                string query = "INSERT INTO Experiences (CompanyName, StartedDate, EndedDate, Position) " +
+                    "VALUES (@CompanyName, @StartedDate, @EndedDate, @Position)";
 
                 SQLiteCommand insertcom = new SQLiteCommand(query, con);
 
                 // Pass values to the query parameters
-                insertcom.Parameters.AddWithValue("@CompagnyName", experience.CompagnyName);
+                insertcom.Parameters.AddWithValue("@CompanyName", experience.CompanyName);
                 insertcom.Parameters.AddWithValue("@StartedDate", experience.StartedDate);
                 insertcom.Parameters.AddWithValue("@EndedDate", experience.EndedDate);
                 insertcom.Parameters.AddWithValue("@Position", experience.Position);
@@ -97,7 +97,7 @@ namespace ResumeBuilder_FINAL
                         {
                             experience.Id = id2;
                         }
-                        experience.CompagnyName = reader["CompagnyName"].ToString();
+                        experience.CompanyName = reader["CompanyName"].ToString();
                         experience.StartedDate = reader["StartedDate"].ToString();
                         experience.EndedDate = reader["EndedDate"].ToString();
                         experience.Position = reader["Position"].ToString();
@@ -116,11 +116,11 @@ namespace ResumeBuilder_FINAL
             {
                 con.Open();
 
-                string query = "Update Experiences Set CompagnyName = @CompagnyName, StartedDate = @StartedDate, EndedDate = @EndedDate, Position = @Position WHERE ID = @Id";
+                string query = "Update Experiences Set CompanyName = @CompanyName, StartedDate = @StartedDate, EndedDate = @EndedDate, Position = @Position WHERE ID = @Id";
 
                 SQLiteCommand updatecom = new SQLiteCommand(query, con);
                 updatecom.Parameters.AddWithValue("@Id", experience.Id);
-                updatecom.Parameters.AddWithValue("@FirstName", experience.CompagnyName);
+                updatecom.Parameters.AddWithValue("@FirstName", experience.CompanyName);
                 updatecom.Parameters.AddWithValue("@LastName", experience.StartedDate);
                 updatecom.Parameters.AddWithValue("@City", experience.EndedDate);
                 updatecom.Parameters.AddWithValue("@Age", experience.Position);
@@ -181,7 +181,7 @@ namespace ResumeBuilder_FINAL
                         {
                             experience.Id = id2;
                         }
-                        experience.CompagnyName = reader["CompagnyName"].ToString();
+                        experience.CompanyName = reader["CompanyName"].ToString();
                         experience.StartedDate = reader["StartedDate"].ToString();
                         experience.EndedDate = reader["EndedDate"].ToString();
                         experience.Position = reader["Position"].ToString();

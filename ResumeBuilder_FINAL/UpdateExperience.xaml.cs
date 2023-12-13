@@ -26,7 +26,7 @@ namespace ResumeBuilder_FINAL
             InitializeComponent();
             this.experience = experience;
 
-            CompagnyNameTextBox.Text = experience.CompagnyName;
+            CompanyNameTextBox.Text = experience.CompanyName;
             PositionTextBox.Text = experience.Position;
             FirstDayTestBox.Text = experience.StartedDate;
             LastDayTextBox.Text = experience.EndedDate;
@@ -36,11 +36,11 @@ namespace ResumeBuilder_FINAL
 
         private void btnEditExperience_Click(object sender, RoutedEventArgs e)
         {
-            if (CompagnyNameTextBox.Text != null && PositionTextBox.Text != null && FirstDayTestBox.Text != null && LastDayTextBox.Text != null)
+            if (CompanyNameTextBox.Text != null && PositionTextBox.Text != null && FirstDayTestBox.Text != null && LastDayTextBox.Text != null)
             {
                 Experience updatedExperience = new Experience();
 
-                updatedExperience.CompagnyName = CompagnyNameTextBox.Text;
+                updatedExperience.CompanyName = CompanyNameTextBox.Text;
                 updatedExperience.Position = PositionTextBox.Text;
                 updatedExperience.StartedDate = FirstDayTestBox.Text;
                 updatedExperience.EndedDate = LastDayTextBox.Text;

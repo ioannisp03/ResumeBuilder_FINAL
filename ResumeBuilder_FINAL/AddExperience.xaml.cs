@@ -31,10 +31,10 @@ namespace ResumeBuilder_FINAL
         private void btnAddExperience_Click(object sender, RoutedEventArgs e)
         {
 
-            if (CompagnyNameTextBox.Text != null && PositionTextBox.Text != null && FirstDayTextBox.Text != null && LastDayTextBox.Text != null) {
+            if (CompanyNameTextBox.Text != null && PositionTextBox.Text != null && FirstDayTextBox.Text != null && LastDayTextBox.Text != null) {
                 Experience addedExperience = new Experience();
 
-                addedExperience.CompagnyName = CompagnyNameTextBox.Text;
+                addedExperience.CompanyName = CompanyNameTextBox.Text;
                 addedExperience.Position = PositionTextBox.Text ;
                 addedExperience.StartedDate = FirstDayTextBox.Text;
                 addedExperience.EndedDate = LastDayTextBox.Text;
