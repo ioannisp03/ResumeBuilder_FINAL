@@ -31,10 +31,13 @@
             <Label Width="125" FontWeight="Bold">Last Day:</Label>
             <TextBlock x:Name="LastDayTextBox"/>
         </StackPanel>
-        <Button x:Name="btnEditExperience" Click="btnExperienceEdit_Click" Content="Update"
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20">
+            <Button x:Name="btnEditExperience" Click="btnExperienceEdit_Click" Content="Update"
                     Width="75" Margin="20"/>
-        <Button x:Name="btnDeleteExperience" Click="btnDeleteExperience_Click" Content="Delete"
+            <Button x:Name="btnDeleteExperience" Click="btnDeleteExperience_Click" Content="Delete"
                     Width="75" Margin="20"/>
+        </StackPanel>
+
     </StackPanel>
 
 
