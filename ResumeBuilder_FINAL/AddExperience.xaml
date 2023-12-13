@@ -1,38 +1,33 @@
-﻿<Window x:Class="ResumeBuilder_FINAL.ProfessionalExperienceWindow"
+﻿<Window x:Class="ResumeBuilder_FINAL.AddExperience"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ResumeBuilder_FINAL"
         mc:Ignorable="d"
-        Title="Professional Experience" Height="450" Width="400">
+        Title="AddExperience" Height="450" Width="400">
 
-        <StackPanel DockPanel.Dock="Top">
-            <Label Content="Professional Experience" FontSize="32" 
-               FontWeight="Bold" HorizontalAlignment="Center" 
-               Margin="0,0,0,20"/>
-                
+
+    <StackPanel Margin="10">
+        <Label Content="Edit Professional Experience" HorizontalAlignment="Center" FontSize="25" FontWeight="Bold" Grid.ColumnSpan="2" Margin="0,0,0,20"/>
         <StackPanel Orientation="Horizontal" Margin="0,5">
             <Label Width="125" FontWeight="Bold">Compagny Name:</Label>
-            <TextBlock x:Name="CompagnyNameTextBox"/>
+            <TextBox x:Name="fNameTextBox"/>
         </StackPanel>
-            
         <StackPanel Orientation="Horizontal" Margin="0,5">
             <Label Width="125" FontWeight="Bold">Position:</Label>
-            <TextBlock x:Name="PositionTextBox"/>
+            <TextBox x:Name="lNameTextBox"/>
         </StackPanel>
-            
         <StackPanel Orientation="Horizontal" Margin="0,5">
             <Label Width="125" FontWeight="Bold">First Day:</Label>
-            <TextBlock x:Name="FirstDayTestBox"/>
+            <TextBox x:Name="ageTextBox"/>
         </StackPanel>
-            
         <StackPanel Orientation="Horizontal" Margin="0,5">
             <Label Width="125" FontWeight="Bold">Last Day:</Label>
-            <TextBlock x:Name="LastDayTextBox"/>
+            <TextBox x:Name="phoneNumberTextBox"/>
         </StackPanel>
-            
-        </StackPanel>
-
-
+        <Button x:Name="btnContactChanges" Click="btnContactChanges_Click" Content="Add"
+            Width="75" Margin="20" HorizontalAlignment="Center"/>
+    </StackPanel>
+    
 </Window>

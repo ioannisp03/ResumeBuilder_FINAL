@@ -1,0 +1,38 @@
+﻿<Window x:Class="ResumeBuilder_FINAL.UpdateExperience"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ResumeBuilder_FINAL"
+        mc:Ignorable="d"
+        Title="UpdateExperience" Height="450" Width="400">
+
+    <StackPanel Margin="10">
+        <Label Content="Update Experience" FontSize="32" 
+               FontWeight="Bold" HorizontalAlignment="Center" 
+               Margin="0,0,0,20"/>
+
+            <StackPanel Orientation="Horizontal" Margin="0,5">
+                <Label Width="125" FontWeight="Bold">Compagny Name:</Label>
+                <TextBox x:Name="CompagnyNameTextBox"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,5">
+                <Label Width="125" FontWeight="Bold">Position:</Label>
+                <TextBox x:Name="PositionTextBox"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,5">
+                <Label Width="125" FontWeight="Bold">First Day:</Label>
+                <TextBox x:Name="FirstDayTestBox"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,5">
+                <Label Width="125" FontWeight="Bold">Last Day:</Label>
+                <TextBox x:Name="LastDayTextBox"/>
+            </StackPanel>
+
+        <Button x:Name="btnEditExperience" Click="btnEditExperience_Click" Content="Edit"
+            Width="75" Margin="20" HorizontalAlignment="Center"/>
+    </StackPanel>
+</Window>

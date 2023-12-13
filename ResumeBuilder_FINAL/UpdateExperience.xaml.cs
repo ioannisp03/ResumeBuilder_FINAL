@@ -15,15 +15,15 @@ using System.Windows.Shapes;
 namespace ResumeBuilder_FINAL
 {
     /// <summary>
-    /// Interaction logic for ProfessionalExperienceWindow.xaml
+    /// Interaction logic for UpdateExperience.xaml
     /// </summary>
-    public partial class ProfessionalExperienceWindow : Window
+    public partial class UpdateExperience : Window
     {
 
-        Experience experience;
-
         ExperienceDBHandler experienceDB = ExperienceDBHandler.Instance;
-        public ProfessionalExperienceWindow(Experience experience)
+
+        Experience experience;
+        public UpdateExperience(Experience experience)
         {
             InitializeComponent();
             this.experience = experience;
@@ -34,15 +34,9 @@ namespace ResumeBuilder_FINAL
             LastDayTextBox.Text = experience.EndedDate;
         }
 
-        private void btnExperienceEdit_Click(object sender, RoutedEventArgs e)
+        private void btnEditExperience_Click(object sender, RoutedEventArgs e)
         {
-            UpdateExperience update = new UpdateExperience(experience);
-            update.ShowDialog();
-        }
-
-        private void btnDeleteExperience_Click(object sender, RoutedEventArgs e)
-        {
-            experienceDB.DeleteExperience(experience);
+            experienceDB.UpdateExperience(experience);
         }
     }
 }

@@ -105,7 +105,7 @@ namespace ResumeBuilder_FINAL
             return experience;
         }
 
-        public int UpdatePerson(Experience experience)
+        public int UpdateExperience(Experience experience)
         {
             int row = 0;
 
@@ -134,7 +134,7 @@ namespace ResumeBuilder_FINAL
             return row;
         }
 
-        public int DeletePerson(Experience experience)
+        public int DeleteExperience(Experience experience)
         {
             int row = 0;
 
