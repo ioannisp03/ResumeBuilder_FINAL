@@ -20,8 +20,6 @@ namespace ResumeBuilder_FINAL
     public partial class UpdateExperience : Window
     {
 
-        ExperienceDBHandler experienceDB = ExperienceDBHandler.Instance;
-
         Experience experience;
         public UpdateExperience(Experience experience)
         {
@@ -32,6 +30,8 @@ namespace ResumeBuilder_FINAL
             PositionTextBox.Text = experience.Position;
             FirstDayTestBox.Text = experience.StartedDate;
             LastDayTextBox.Text = experience.EndedDate;
+
+
         }
 
         private void btnEditExperience_Click(object sender, RoutedEventArgs e)
@@ -48,6 +48,12 @@ namespace ResumeBuilder_FINAL
                 ExperienceDBHandler experienceDB = ExperienceDBHandler.Instance;
                 experienceDB.UpdateExperience(updatedExperience);
                 Close();
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Need to have every field filled.",
+                    "Null Fields Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }

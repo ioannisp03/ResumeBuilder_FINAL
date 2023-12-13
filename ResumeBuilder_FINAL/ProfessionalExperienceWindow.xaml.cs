@@ -43,6 +43,7 @@ namespace ResumeBuilder_FINAL
         private void btnDeleteExperience_Click(object sender, RoutedEventArgs e)
         {
             experienceDB.DeleteExperience(experience);
+            Close();
         }
     }
 }

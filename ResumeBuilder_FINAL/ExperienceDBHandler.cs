@@ -145,7 +145,7 @@ namespace ResumeBuilder_FINAL
             {
                 con.Open();
 
-                string query = "DELETE FROM Persons WHERE ID = @Id";
+                string query = "DELETE FROM Experiences WHERE ID = @Id";
                 SQLiteCommand deletecom = new SQLiteCommand(query, con);
                 deletecom.Parameters.AddWithValue("@Id", experience.Id);
 

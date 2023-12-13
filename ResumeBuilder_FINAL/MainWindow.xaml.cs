@@ -22,7 +22,7 @@ namespace ResumeBuilder_FINAL
     {
         ContactDBHandler contactDBHandler = ContactDBHandler.Instance;
         List<Contact> contacts = new List<Contact>();
-        
+
         EducationDBHandler educationDBHandler = EducationDBHandler.Instance;
         List<Education> educations = new List<Education>();
 
@@ -37,7 +37,7 @@ namespace ResumeBuilder_FINAL
             lblCreated.Content = DateTime.Now.ToString();
             lblUpdated.Content = DateTime.Now.ToString();
         }
-         
+
         private void RefreshAllResources()
         {
             ResumeContact.ItemsSource = null;
@@ -46,7 +46,7 @@ namespace ResumeBuilder_FINAL
 
             ResumeEducation.ItemsSource = null;
             educations = educationDBHandler.ReadAllEducations();
-            ResumeEducation.ItemsSource= educations;
+            ResumeEducation.ItemsSource = educations;
 
             ResumeExperience.ItemsSource = null;
             experiences = ExperienceDBHandler.ReadAllExperience();
@@ -59,7 +59,7 @@ namespace ResumeBuilder_FINAL
         {
             Contact contact = (Contact)ResumeContact.SelectedItem;
 
-            if(contact != null)
+            if (contact != null)
             {
                 ContactInfoWindow contactInfoWindow = new ContactInfoWindow(contact);
                 contactInfoWindow.ShowDialog();
@@ -71,7 +71,7 @@ namespace ResumeBuilder_FINAL
         {
             Experience experience = (Experience)ResumeExperience.SelectedItem;
 
-            if(experience != null)
+            if (experience != null)
             {
                 ProfessionalExperienceWindow professionalExperienceWindow = new ProfessionalExperienceWindow(experience);
 
@@ -84,7 +84,7 @@ namespace ResumeBuilder_FINAL
         {
             Education education = (Education)ResumeEducation.SelectedItem;
 
-            if(education != null)
+            if (education != null)
             {
                 EducationInfoWindow educationInfoWindow = new EducationInfoWindow(education);
                 educationInfoWindow.ShowDialog();
@@ -95,17 +95,14 @@ namespace ResumeBuilder_FINAL
 
         private void btnAddContact_Click(object sender, RoutedEventArgs e)
         {
-            if (ResumeContact.ItemsSource == null)
-            {
-                MessageBox.Show("Cannot create multiple contact informations.",
-                    "Contact Information Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            else
-            {
-                AddContact addContact = new AddContact();
-                addContact.ShowDialog();
-                RefreshAllResources();
-            }
+
+            AddContact addContact = new AddContact();
+            addContact.ShowDialog();
+            RefreshAllResources();
+            btnAddContact.IsEnabled = false;
+            btnAddContact.Content = "Cannot add another contact";
+
+
         }
 
         private void btnAddExperience_Click(object sender, RoutedEventArgs e)

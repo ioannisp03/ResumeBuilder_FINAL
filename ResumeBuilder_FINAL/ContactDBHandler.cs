@@ -140,6 +140,10 @@ namespace ResumeBuilder_FINAL
                 {
                     Console.WriteLine("Error Generated. Details: " + ex.ToString());
                 }
+
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.btnAddContact.IsEnabled = true;
+                mainWindow.btnAddContact.Content = "Add contact information";
             }
             return row;
         }
@@ -147,6 +151,7 @@ namespace ResumeBuilder_FINAL
         public int DeleteContact(Contact contact)
         {
             int row = 0;
+            
 
             using (SQLiteConnection con = new SQLiteConnection(ConString))
             {
@@ -163,6 +168,7 @@ namespace ResumeBuilder_FINAL
                 {
                     Console.WriteLine("Error Generated. Details: " + ex.ToString());
                 }
+               
             }
             return row;
         }
