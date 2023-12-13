@@ -47,7 +47,8 @@ namespace ResumeBuilder_FINAL
                 ExperienceDBHandler experienceDB = ExperienceDBHandler.Instance;
                 experienceDB.UpdateExperience(experience);
 
-                Close();
+                ProfessionalExperienceWindow professionalExperienceWindow = Application.Current.Windows.OfType<ProfessionalExperienceWindow>().FirstOrDefault();
+                professionalExperienceWindow.Close();
                 Close();
             }
             else

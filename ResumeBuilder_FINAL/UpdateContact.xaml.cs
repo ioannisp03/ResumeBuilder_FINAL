@@ -50,7 +50,6 @@ namespace ResumeBuilder_FINAL
                 db.UpdateContactInfo(contact);
 
                 Close();
-                Close();
             }
             else
             {
