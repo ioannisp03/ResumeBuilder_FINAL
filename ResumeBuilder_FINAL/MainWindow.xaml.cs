@@ -67,6 +67,14 @@ namespace ResumeBuilder_FINAL
 
         private void ResumeEducation_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            Education education = (Education)ResumeEducation.SelectedItem;
+
+            if(education != null)
+            {
+                EducationInfoWindow educationInfoWindow = new EducationInfoWindow(education);
+                educationInfoWindow.ShowDialog();
+                RefreshAllResources();
+            }
 
         }
 
