@@ -25,6 +25,7 @@ namespace ResumeBuilder_FINAL
         public AddExperience()
         {
             InitializeComponent();
+            this.ResizeMode = ResizeMode.NoResize;
         }
 
 
